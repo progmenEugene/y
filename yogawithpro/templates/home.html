@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+
+
+  <hr>
+  <hr>
+  <hr>
+
+   <p><a href="{% url 'admin:index' %}">Admin</a></p>
+
+   {% if user.is_authenticated %}
+   Hello {{ user.username }}
+       <p><a href="{% url 'profile' %}">Profile</a></p>
+
+   {% else %}
+  Создать  <a href="#">Покупателя</a> или <a href="{% url 'teacher_signup' %}">Преподавателя</a>.
+  {% endif %}
+
+
+
+  </p>
+  <hr>
+  
+{% endblock %}
